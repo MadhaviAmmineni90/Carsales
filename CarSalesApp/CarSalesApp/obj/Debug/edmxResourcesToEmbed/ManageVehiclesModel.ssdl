@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CarSalesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="tblBikes">
+    <Key>
+      <PropertyRef Name="BikeId" />
+    </Key>
+    <Property Name="BikeId" Type="int" Nullable="false" />
+    <Property Name="Make" Type="nvarchar" MaxLength="200" />
+    <Property Name="Model" Type="nvarchar" MaxLength="200" />
+    <Property Name="Engine" Type="nvarchar" MaxLength="200" />
+    <Property Name="wheels" Type="int" />
+    <Property Name="bikeType" Type="nvarchar" MaxLength="200" />
+    <Property Name="VehicleTypeId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblCars">
+    <Key>
+      <PropertyRef Name="CarId" />
+    </Key>
+    <Property Name="CarId" Type="int" Nullable="false" />
+    <Property Name="Make" Type="nvarchar" MaxLength="200" />
+    <Property Name="Model" Type="nvarchar" MaxLength="200" />
+    <Property Name="Engine" Type="nvarchar" MaxLength="200" />
+    <Property Name="Doors" Type="int" />
+    <Property Name="wheels" Type="int" />
+    <Property Name="cartype" Type="nvarchar" MaxLength="200" />
+    <Property Name="VehicleTypeId" Type="int" />
+  </EntityType>
+  <EntityType Name="tblVehicleTypes">
+    <Key>
+      <PropertyRef Name="VehicleTypeId" />
+    </Key>
+    <Property Name="VehicleTypeId" Type="int" Nullable="false" />
+    <Property Name="VehicleType" Type="nvarchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK__tblBikes__Vehicl__286302EC">
+    <End Role="tblVehicleTypes" Type="Self.tblVehicleTypes" Multiplicity="0..1" />
+    <End Role="tblBikes" Type="Self.tblBikes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblVehicleTypes">
+        <PropertyRef Name="VehicleTypeId" />
+      </Principal>
+      <Dependent Role="tblBikes">
+        <PropertyRef Name="VehicleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__tblCars__Vehicle__25869641">
+    <End Role="tblVehicleTypes" Type="Self.tblVehicleTypes" Multiplicity="0..1" />
+    <End Role="tblCars" Type="Self.tblCars" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblVehicleTypes">
+        <PropertyRef Name="VehicleTypeId" />
+      </Principal>
+      <Dependent Role="tblCars">
+        <PropertyRef Name="VehicleTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CarSalesDBModelStoreContainer">
+    <EntitySet Name="tblBikes" EntityType="Self.tblBikes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblCars" EntityType="Self.tblCars" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblVehicleTypes" EntityType="Self.tblVehicleTypes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__tblBikes__Vehicl__286302EC" Association="Self.FK__tblBikes__Vehicl__286302EC">
+      <End Role="tblVehicleTypes" EntitySet="tblVehicleTypes" />
+      <End Role="tblBikes" EntitySet="tblBikes" />
+    </AssociationSet>
+    <AssociationSet Name="FK__tblCars__Vehicle__25869641" Association="Self.FK__tblCars__Vehicle__25869641">
+      <End Role="tblVehicleTypes" EntitySet="tblVehicleTypes" />
+      <End Role="tblCars" EntitySet="tblCars" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

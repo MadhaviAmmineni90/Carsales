@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="CarSalesDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="tblBikes">
+          <Key>
+            <PropertyRef Name="BikeId" />
+          </Key>
+          <Property Name="BikeId" Type="int" Nullable="false" />
+          <Property Name="Make" Type="nvarchar" MaxLength="200" />
+          <Property Name="Model" Type="nvarchar" MaxLength="200" />
+          <Property Name="Engine" Type="nvarchar" MaxLength="200" />
+          <Property Name="wheels" Type="int" />
+          <Property Name="bikeType" Type="nvarchar" MaxLength="200" />
+          <Property Name="VehicleTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="tblCars">
+          <Key>
+            <PropertyRef Name="CarId" />
+          </Key>
+          <Property Name="CarId" Type="int" Nullable="false" />
+          <Property Name="Make" Type="nvarchar" MaxLength="200" />
+          <Property Name="Model" Type="nvarchar" MaxLength="200" />
+          <Property Name="Engine" Type="nvarchar" MaxLength="200" />
+          <Property Name="Doors" Type="int" />
+          <Property Name="wheels" Type="int" />
+          <Property Name="cartype" Type="nvarchar" MaxLength="200" />
+          <Property Name="VehicleTypeId" Type="int" />
+        </EntityType>
+        <EntityType Name="tblVehicleTypes">
+          <Key>
+            <PropertyRef Name="VehicleTypeId" />
+          </Key>
+          <Property Name="VehicleTypeId" Type="int" Nullable="false" />
+          <Property Name="VehicleType" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <Association Name="FK__tblBikes__Vehicl__286302EC">
+          <End Role="tblVehicleTypes" Type="Self.tblVehicleTypes" Multiplicity="0..1" />
+          <End Role="tblBikes" Type="Self.tblBikes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVehicleTypes">
+              <PropertyRef Name="VehicleTypeId" />
+            </Principal>
+            <Dependent Role="tblBikes">
+              <PropertyRef Name="VehicleTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCars__Vehicle__25869641">
+          <End Role="tblVehicleTypes" Type="Self.tblVehicleTypes" Multiplicity="0..1" />
+          <End Role="tblCars" Type="Self.tblCars" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVehicleTypes">
+              <PropertyRef Name="VehicleTypeId" />
+            </Principal>
+            <Dependent Role="tblCars">
+              <PropertyRef Name="VehicleTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CarSalesDBModelStoreContainer">
+          <EntitySet Name="tblBikes" EntityType="Self.tblBikes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblCars" EntityType="Self.tblCars" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblVehicleTypes" EntityType="Self.tblVehicleTypes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__tblBikes__Vehicl__286302EC" Association="Self.FK__tblBikes__Vehicl__286302EC">
+            <End Role="tblVehicleTypes" EntitySet="tblVehicleTypes" />
+            <End Role="tblBikes" EntitySet="tblBikes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCars__Vehicle__25869641" Association="Self.FK__tblCars__Vehicle__25869641">
+            <End Role="tblVehicleTypes" EntitySet="tblVehicleTypes" />
+            <End Role="tblCars" EntitySet="tblCars" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CarSalesDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="tblBike">
+          <Key>
+            <PropertyRef Name="BikeId" />
+          </Key>
+          <Property Name="BikeId" Type="Int32" Nullable="false" />
+          <Property Name="Make" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Engine" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="wheels" Type="Int32" />
+          <Property Name="bikeType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleTypeId" Type="Int32" />
+          <NavigationProperty Name="tblVehicleType" Relationship="Self.FK__tblBikes__Vehicl__286302EC" FromRole="tblBikes" ToRole="tblVehicleTypes" />
+        </EntityType>
+        <EntityType Name="tblCar">
+          <Key>
+            <PropertyRef Name="CarId" />
+          </Key>
+          <Property Name="CarId" Type="Int32" Nullable="false" />
+          <Property Name="Make" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Model" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Engine" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Doors" Type="Int32" />
+          <Property Name="wheels" Type="Int32" />
+          <Property Name="cartype" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="VehicleTypeId" Type="Int32" />
+          <NavigationProperty Name="tblVehicleType" Relationship="Self.FK__tblCars__Vehicle__25869641" FromRole="tblCars" ToRole="tblVehicleTypes" />
+        </EntityType>
+        <EntityType Name="tblVehicleType">
+          <Key>
+            <PropertyRef Name="VehicleTypeId" />
+          </Key>
+          <Property Name="VehicleTypeId" Type="Int32" Nullable="false" />
+          <Property Name="VehicleType" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tblBikes" Relationship="Self.FK__tblBikes__Vehicl__286302EC" FromRole="tblVehicleTypes" ToRole="tblBikes" />
+          <NavigationProperty Name="tblCars" Relationship="Self.FK__tblCars__Vehicle__25869641" FromRole="tblVehicleTypes" ToRole="tblCars" />
+        </EntityType>
+        <Association Name="FK__tblBikes__Vehicl__286302EC">
+          <End Role="tblVehicleTypes" Type="Self.tblVehicleType" Multiplicity="0..1" />
+          <End Role="tblBikes" Type="Self.tblBike" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVehicleTypes">
+              <PropertyRef Name="VehicleTypeId" />
+            </Principal>
+            <Dependent Role="tblBikes">
+              <PropertyRef Name="VehicleTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__tblCars__Vehicle__25869641">
+          <End Role="tblVehicleTypes" Type="Self.tblVehicleType" Multiplicity="0..1" />
+          <End Role="tblCars" Type="Self.tblCar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tblVehicleTypes">
+              <PropertyRef Name="VehicleTypeId" />
+            </Principal>
+            <Dependent Role="tblCars">
+              <PropertyRef Name="VehicleTypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CarSalesDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tblBikes" EntityType="Self.tblBike" />
+          <EntitySet Name="tblCars" EntityType="Self.tblCar" />
+          <EntitySet Name="tblVehicleTypes" EntityType="Self.tblVehicleType" />
+          <AssociationSet Name="FK__tblBikes__Vehicl__286302EC" Association="Self.FK__tblBikes__Vehicl__286302EC">
+            <End Role="tblVehicleTypes" EntitySet="tblVehicleTypes" />
+            <End Role="tblBikes" EntitySet="tblBikes" />
+          </AssociationSet>
+          <AssociationSet Name="FK__tblCars__Vehicle__25869641" Association="Self.FK__tblCars__Vehicle__25869641">
+            <End Role="tblVehicleTypes" EntitySet="tblVehicleTypes" />
+            <End Role="tblCars" EntitySet="tblCars" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CarSalesDBModelStoreContainer" CdmEntityContainer="CarSalesDBEntities">
+          <EntitySetMapping Name="tblBikes">
+            <EntityTypeMapping TypeName="CarSalesDBModel.tblBike">
+              <MappingFragment StoreEntitySet="tblBikes">
+                <ScalarProperty Name="BikeId" ColumnName="BikeId" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Engine" ColumnName="Engine" />
+                <ScalarProperty Name="wheels" ColumnName="wheels" />
+                <ScalarProperty Name="bikeType" ColumnName="bikeType" />
+                <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblCars">
+            <EntityTypeMapping TypeName="CarSalesDBModel.tblCar">
+              <MappingFragment StoreEntitySet="tblCars">
+                <ScalarProperty Name="CarId" ColumnName="CarId" />
+                <ScalarProperty Name="Make" ColumnName="Make" />
+                <ScalarProperty Name="Model" ColumnName="Model" />
+                <ScalarProperty Name="Engine" ColumnName="Engine" />
+                <ScalarProperty Name="Doors" ColumnName="Doors" />
+                <ScalarProperty Name="wheels" ColumnName="wheels" />
+                <ScalarProperty Name="cartype" ColumnName="cartype" />
+                <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblVehicleTypes">
+            <EntityTypeMapping TypeName="CarSalesDBModel.tblVehicleType">
+              <MappingFragment StoreEntitySet="tblVehicleTypes">
+                <ScalarProperty Name="VehicleTypeId" ColumnName="VehicleTypeId" />
+                <ScalarProperty Name="VehicleType" ColumnName="VehicleType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
