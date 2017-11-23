@@ -7,7 +7,7 @@ using System.Web.Http;
 
 namespace CarSalesApp.Controllers
 {
-    public class CarsController : ApiController
+    public class VehicleController : ApiController
     {
         private CarSalesDBEntities objcarDbentities = new CarSalesDBEntities();
         /// <summary>
