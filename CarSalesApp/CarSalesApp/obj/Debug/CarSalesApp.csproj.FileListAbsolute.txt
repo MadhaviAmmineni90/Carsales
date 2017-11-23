@@ -74,4 +74,3 @@ C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\Microsoft.AI.Web.xml
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\obj\Debug\CarSalesApp.dll
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\obj\Debug\CarSalesApp.pdb
-C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\obj\Debug\CarSalesApp.csprojResolveAssemblyReference.cache

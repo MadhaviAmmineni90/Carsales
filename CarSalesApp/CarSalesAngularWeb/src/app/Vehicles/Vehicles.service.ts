@@ -1,16 +1,16 @@
 ﻿import { Injectable } from '@angular/core';
-import { ICars } from './cars';
+import { ICars } from './Vehicles';
 import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
 
 @Injectable()
-export class CarService {
+export class VehicleService {
 
     constructor(private _http: Http) { }
     getCars(): Observable<ICars[]> {
-        return this._http.get("http://localhost:60367/Api/Cars")
+        return this._http.get("http://localhost:60367/Api/Vehicle")
             .map((response: Response) => <ICars[]>response.json())
     }
 }
