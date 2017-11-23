@@ -58,5 +58,23 @@ namespace CarSalesApp.Controllers
             return Ok();
         }
 
+        /// <summary>
+        /// Method to add new cars
+        /// </summary>
+        /// <param name="objCars"></param>
+        /// <returns>IHttpActionResult</returns>
+        [HttpPost]
+        public IHttpActionResult PostCars(tblCar objCars)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+            objcarDbentities.tblCars.Add(objCars);
+            objcarDbentities.SaveChanges();
+
+            return CreatedAtRoute("DefaultApi", new { id = objCars.CarId }, objCars);
+        }
     }
+}
 }
