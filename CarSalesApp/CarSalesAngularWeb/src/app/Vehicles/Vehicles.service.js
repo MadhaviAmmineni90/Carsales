@@ -10,15 +10,41 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
+var Observable_1 = require("rxjs/Observable");
 require("rxjs/add/operator/map");
 require("rxjs/add/operator/catch");
+require("rxjs/add/operator/do");
+require("rxjs/add/operator/debounceTime");
+require("rxjs/add/operator/distinctUntilChanged");
+require("rxjs/add/operator/filter");
+require("rxjs/add/operator/map");
+require("rxjs/add/operator/switchMap");
 var VehicleService = (function () {
     function VehicleService(_http) {
         this._http = _http;
+        this.headers = new http_1.Headers({
+            'Content-Type': 'application/json',
+            'Accept': 'q=0.8;application/json;q=0.9'
+        });
+        this.options = new http_1.RequestOptions({ headers: this.headers });
     }
+    VehicleService.prototype.handleError = function (error) {
+        var errMsg = (error.message) ? error.message :
+            error.status ? error.status + " - " + error.statusText : 'Server error';
+        console.error(errMsg);
+        return Observable_1.Observable.throw(errMsg);
+    };
     VehicleService.prototype.getCars = function () {
         return this._http.get("http://localhost:60367/Api/Vehicle")
             .map(function (response) { return response.json(); });
+    };
+    VehicleService.prototype.postCars = function (url, model) {
+        var body = JSON.stringify(model);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this._http.post("http://localhost:60367/Api/Vehicle", body, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
     };
     return VehicleService;
 }());

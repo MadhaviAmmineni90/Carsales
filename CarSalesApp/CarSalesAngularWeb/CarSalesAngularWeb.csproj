@@ -81,6 +81,7 @@
     <Content Include="src\app\app.component.js" />
     <Content Include="src\app\app.component.spec.js" />
     <Content Include="src\app\app.module.js" />
+    <Content Include="src\app\Vehicles\VehicleCreate.component.html" />
     <Content Include="src\app\Vehicles\Vehicles.component.js" />
     <Content Include="src\app\Vehicles\Vehicles.js" />
     <Content Include="src\app\Vehicles\Vehicles.service.js" />
@@ -124,6 +125,7 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\Vehicles\VehicleCreate.component.ts" />
     <TypeScriptCompile Include="src\app\Vehicles\Vehicles.component.ts" />
     <TypeScriptCompile Include="src\app\Vehicles\Vehicles.service.ts" />
     <TypeScriptCompile Include="src\app\Vehicles\Vehicles.ts" />
