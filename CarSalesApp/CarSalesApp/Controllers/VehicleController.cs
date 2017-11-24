@@ -10,6 +10,9 @@ namespace CarSalesApp.Controllers
     public class VehicleController : ApiController
     {
         private CarSalesDBEntities objcarDbentities = new CarSalesDBEntities();
+
+        #region Cars
+
         /// <summary>
         /// Method to Get the list of vehicles
         /// </summary>
@@ -73,7 +76,28 @@ namespace CarSalesApp.Controllers
             objcarDbentities.tblCars.Add(objCars);
             objcarDbentities.SaveChanges();
 
-           // return CreatedAtRoute("DefaultApi", new { id = objCars.CarId }, objCars);
+            // return CreatedAtRoute("DefaultApi", new { id = objCars.CarId }, objCars);
         }
+
+
+        #endregion
+
+
+
+        #region Bikes
+
+
+        /// <summary>
+        /// Method to Get the list of vehicles
+        /// </summary>
+        /// <returns>List</returns>
+        [HttpGet]
+        public IEnumerable<tblBike> GetBikes()
+        {
+            objcarDbentities.Configuration.ProxyCreationEnabled = false;
+            return objcarDbentities.tblBikes.ToList();
+        }
+
+        #endregion
     }
 }

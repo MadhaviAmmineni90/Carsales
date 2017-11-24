@@ -8,3 +8,12 @@
     cartype: string;
 
 }
+export interface IBikes {
+    BikeId: number;
+    Make: string;
+    Model: string;
+    Engine: string;
+   wheels: number;
+   bikeType: string;
+
+}

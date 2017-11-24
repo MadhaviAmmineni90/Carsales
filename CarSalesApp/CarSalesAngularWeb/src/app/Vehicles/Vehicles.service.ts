@@ -1,5 +1,5 @@
 ﻿import { Injectable } from '@angular/core';
-import { ICars } from './Vehicles';
+import { ICars, IBikes } from './Vehicles';
 import { Http, Response, Jsonp, Headers, RequestOptions, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
@@ -14,7 +14,11 @@ import 'rxjs/add/operator/switchMap';
 
 
 @Injectable()
+
 export class VehicleService {
+
+    ///Cars Component
+
     headers: Headers;
     options: RequestOptions;
     private handleError(error: any) {
@@ -45,4 +49,11 @@ export class VehicleService {
             .catch(this.handleError);
     }
 
+    //Bikes Component
+
+    getBikes(): Observable<IBikes[]> {
+
+        return this._http.get("http://localhost:60367/Api/Vehicle")
+            .map((response: Response) => <IBikes[]>response.json())
+    }
 }
