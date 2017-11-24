@@ -63,18 +63,17 @@ namespace CarSalesApp.Controllers
         /// </summary>
         /// <param name="objCars"></param>
         /// <returns>IHttpActionResult</returns>
-        [HttpPost]
-        public IHttpActionResult PostCars(tblCar objCars)
+        ///[HttpPost]
+        public void PostCars([FromBody]tblCar objCars)
         {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
+            //if (!ModelState.IsValid)
+            //{
+            //    return BadRequest(ModelState);
+            //}
             objcarDbentities.tblCars.Add(objCars);
             objcarDbentities.SaveChanges();
 
-            return CreatedAtRoute("DefaultApi", new { id = objCars.CarId }, objCars);
+           // return CreatedAtRoute("DefaultApi", new { id = objCars.CarId }, objCars);
         }
     }
-}
 }

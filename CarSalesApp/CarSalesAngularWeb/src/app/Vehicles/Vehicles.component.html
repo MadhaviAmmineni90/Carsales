@@ -3,31 +3,40 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <link href="../../../bootstrap/css/bootstrap.css" rel="stylesheet" />
 </head>
 <body>
-    <table>
-        <thead>
-            <tr>
-                <th>Make</th>
-                <th>Model</th>
-                <th>Engine</th>
-                <th>Doors</th>
-                <th>wheels</th>
-                <th>CarType</th>
-            </tr>
-        </thead>
-        <tbody>
-            <ng-container *ngFor="let car of cars;">
-                <tr>
-                    <td>{{car.Make}}</td>
-                    <td>{{car.Model}}</td>
-                    <td>{{car.Engine}}</td>
-                    <td>{{car.Doors}}</td>
-                    <td>{{car.Wheels}}</td>
-                    <td>{{car.CarType}}</td>
-                </tr>
-            </ng-container>
-        </tbody>
-    </table>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table ">
+                <thead class="thead-default">
+                    <tr>
+                        <th>Make</th>
+                        <th>Model</th>
+                        <th>Engine</th>
+                        <th>wheels</th>
+                        <th>CarType</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let car of cars">
+                        <tr>
+                            <td>{{car.Make}}</td>
+                            <td>{{car.Model}}</td>
+                            <td>{{car.Engine}}</td>
+                            <td>{{car.Doors}}</td>
+                            <td>{{car.wheels}}</td>
+                            <td>{{car.cartype}}</td>
+                            <td style="width: 70px;">
+                                <i class="glyphicon glyphicon-edit pointer"
+                                   (click)="edit(cust.id)" title="Edit"></i>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </body>
 </html>

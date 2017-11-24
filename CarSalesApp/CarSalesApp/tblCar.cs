@@ -9,18 +9,34 @@
 
 namespace CarSalesApp
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
     
     public partial class tblCar
     {
+       [JsonProperty(Order =1)]
         public int CarId { get; set; }
+
+        [JsonProperty(Order = 2)]
         public string Make { get; set; }
+
+        [JsonProperty(Order = 3)]
         public string Model { get; set; }
+
+        [JsonProperty(Order = 4)]
         public string Engine { get; set; }
+
+        [JsonProperty(Order = 5)]
         public Nullable<int> Doors { get; set; }
+
+        [JsonProperty(Order = 6)]
         public Nullable<int> wheels { get; set; }
+
+        [JsonProperty(Order = 7)]
         public string cartype { get; set; }
+
+        [JsonProperty(Order = 8)]
         public Nullable<int> VehicleTypeId { get; set; }
     
         public virtual tblVehicleType tblVehicleType { get; set; }

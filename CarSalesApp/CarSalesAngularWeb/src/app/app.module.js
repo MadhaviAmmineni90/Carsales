@@ -18,7 +18,7 @@ var AppModule = (function () {
 }());
 AppModule = __decorate([
     core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule],
+        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, http_1.JsonpModule],
         declarations: [app_component_1.AppComponent, Vehicles_component_1.carscomponent],
         bootstrap: [app_component_1.AppComponent, Vehicles_component_1.carscomponent]
     })

@@ -42,7 +42,9 @@ C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\Newtonsoft.Json.dll
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Net.Http.Formatting.dll
+C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Cors.dll
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Helpers.dll
+C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Http.Cors.dll
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Http.dll
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Http.WebHost.dll
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Mvc.dll
@@ -55,6 +57,7 @@ C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\EntityFramework.xml
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\EntityFramework.SqlServer.xml
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Http.Cors.xml
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Helpers.xml
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Mvc.xml
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\System.Web.Optimization.xml
@@ -72,5 +75,6 @@ C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\bin\Microsoft.AI.Web.xml
+C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\obj\Debug\CarSalesApp.csprojResolveAssemblyReference.cache
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\obj\Debug\CarSalesApp.dll
 C:\Users\Madhavi Somu\Documents\Visual Studio 2017\Projects\Carsales\CarSalesApp\CarSalesApp\obj\Debug\CarSalesApp.pdb
