@@ -17,6 +17,17 @@ import { VehicleService } from './Vehicles.service';
 export class carscomponent implements OnInit {
     cars: ICars[];
     bikes: IBikes[];
+    addCarstable: boolean = false;
+
+    public CarId = "0";
+    public Make = "";
+    public Model = "";
+    public Engine = "";
+    public Doors = "";
+    public wheels = "";
+    public cartype = "";
+    public BikeType = "";
+
     constructor(private _Carservice: VehicleService) {
     }
 
@@ -24,6 +35,18 @@ export class carscomponent implements OnInit {
         this._Carservice.getCars().subscribe((carsData) => this.cars = carsData);
         this._Carservice.getBikes().subscribe((bikesData) => this.bikes = bikesData);
     }
+
+    AddCars() {
+        this.CarId = "0";
+        this.Make = "";
+        this.Model = "";
+        this.Engine = "";
+        this.Doors = "";
+        this.wheels = "";
+        this.cartype = "";
+    }
+
+   
 }
 
 

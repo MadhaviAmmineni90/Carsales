@@ -13,11 +13,29 @@ var Vehicles_service_1 = require("./Vehicles.service");
 var carscomponent = (function () {
     function carscomponent(_Carservice) {
         this._Carservice = _Carservice;
+        this.addCarstable = false;
+        this.CarId = "0";
+        this.Make = "";
+        this.Model = "";
+        this.Engine = "";
+        this.Doors = "";
+        this.wheels = "";
+        this.cartype = "";
+        this.BikeType = "";
     }
     carscomponent.prototype.ngOnInit = function () {
         var _this = this;
         this._Carservice.getCars().subscribe(function (carsData) { return _this.cars = carsData; });
         this._Carservice.getBikes().subscribe(function (bikesData) { return _this.bikes = bikesData; });
+    };
+    carscomponent.prototype.AddCars = function () {
+        this.CarId = "0";
+        this.Make = "";
+        this.Model = "";
+        this.Engine = "";
+        this.Doors = "";
+        this.wheels = "";
+        this.cartype = "";
     };
     return carscomponent;
 }());
