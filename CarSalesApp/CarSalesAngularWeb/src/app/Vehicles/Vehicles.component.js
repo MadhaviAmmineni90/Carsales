@@ -17,12 +17,18 @@ var carscomponent = (function () {
     carscomponent.prototype.ngOnInit = function () {
         var _this = this;
         this._Carservice.getCars().subscribe(function (carsData) { return _this.cars = carsData; });
+        this._Carservice.getBikes().subscribe(function (bikesData) { return _this.bikes = bikesData; });
     };
     return carscomponent;
 }());
 carscomponent = __decorate([
     core_1.Component({
         selector: 'list-cars',
+        templateUrl: 'app/Vehicles/Vehicles.component.html',
+        providers: [Vehicles_service_1.VehicleService]
+    }),
+    core_1.Component({
+        selector: 'list-bikes',
         templateUrl: 'app/Vehicles/Vehicles.component.html',
         providers: [Vehicles_service_1.VehicleService]
     }),

@@ -79,9 +79,7 @@ namespace CarSalesApp.Controllers
             // return CreatedAtRoute("DefaultApi", new { id = objCars.CarId }, objCars);
         }
 
-
         #endregion
-
 
 
         #region Bikes
@@ -98,6 +96,40 @@ namespace CarSalesApp.Controllers
             return objcarDbentities.tblBikes.ToList();
         }
 
+        /// <summary>
+        /// Method to Update existing Cars
+        /// </summary>
+        /// <param name="BikeId"></param>
+        /// <param name="objBike"></param>
+        /// <returns>IHttpActionResult</returns>
+        [HttpPut]
+        public IHttpActionResult PutBike(int BikeId, tblBike objBike)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest("Not a valid data");
+            }
+
+            if (BikeId != objBike.BikeId)
+            {
+                return BadRequest();
+            }
+            var existingBike = objcarDbentities.tblBikes.Where(b => b.BikeId == objBike.BikeId).FirstOrDefault<tblBike>();
+            if (existingBike != null)
+            {
+                existingBike.Make = objBike.Make;
+                existingBike.Model = objBike.Model;
+                existingBike.Engine = objBike.Engine;
+                existingBike.wheels = objBike.wheels;
+                existingBike.bikeType = objBike.bikeType;
+                objcarDbentities.SaveChanges();
+            }
+            else
+            {
+                return NotFound();
+            }
+            return Ok();
+        }
         #endregion
     }
 }

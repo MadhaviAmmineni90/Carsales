@@ -46,6 +46,11 @@ var VehicleService = (function () {
             .map(function (response) { return response.json(); })
             .catch(this.handleError);
     };
+    //Bikes Component
+    VehicleService.prototype.getBikes = function () {
+        return this._http.get("http://localhost:60367/Api/Vehicle")
+            .map(function (response) { return response.json(); });
+    };
     return VehicleService;
 }());
 VehicleService = __decorate([
