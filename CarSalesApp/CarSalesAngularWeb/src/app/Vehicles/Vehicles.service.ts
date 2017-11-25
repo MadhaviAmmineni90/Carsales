@@ -56,4 +56,13 @@ export class VehicleService {
         return this._http.get("http://localhost:60367/Api/Vehicle")
             .map((response: Response) => <IBikes[]>response.json())
     }
+
+    postBikes(url: string, model: IBikes): Observable<any> {
+        let body = JSON.stringify(model);
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let options = new RequestOptions({ headers: headers });
+        return this._http.post("http://localhost:60367/Api/Vehicle", body, options)
+            .map((response: Response) => <IBikes>response.json())
+            .catch(this.handleError);
+    }
 }

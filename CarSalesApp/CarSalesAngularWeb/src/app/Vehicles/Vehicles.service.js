@@ -51,6 +51,14 @@ var VehicleService = (function () {
         return this._http.get("http://localhost:60367/Api/Vehicle")
             .map(function (response) { return response.json(); });
     };
+    VehicleService.prototype.postBikes = function (url, model) {
+        var body = JSON.stringify(model);
+        var headers = new http_1.Headers({ 'Content-Type': 'application/json' });
+        var options = new http_1.RequestOptions({ headers: headers });
+        return this._http.post("http://localhost:60367/Api/Vehicle", body, options)
+            .map(function (response) { return response.json(); })
+            .catch(this.handleError);
+    };
     return VehicleService;
 }());
 VehicleService = __decorate([
