@@ -5,7 +5,6 @@
     <title></title>
 </head>
 <body>
-    <h1>Cars</h1>
     <hr>
     <form [formGroup]="AddCarsForm" (ngSubmit)="save()" novalidate>
 
@@ -23,49 +22,55 @@
                         <tr>
                             <td><b>Make </b> </td>
                             <td>
-                                <input type="text" #MakeId (ngModel)="MakeId" value="{{MakeID}}" style="background-color:tan" readonly>
+                                <input type="text" #MakeId (ngModel)="MakeId" value="{{Make}}"  readonly>
                             </td>
-                            <td width="20"> </td>
-                            <td><b> </b> </td>
+                        <tr>
+
+                            <td><b>Model </b> </td>
                             <td>
                                 <input type="text" #Model (ngModel)="Model" value="{{Model}}">
                             </td>
-                            <td></td>
                         </tr>
-                        <tr>
-                            <td><b>Engine </b> </td>
-                            <td>
-                                <input type="text" #Engine (ngModel)="Engine" value="{{Engine}}">
-                            </td>
-                            <td width="20"> </td>
-                            <td><b>Doors </b> </td>
-                            <td>
-                                <input type="text" #Doors (ngModel)="Doors" value="{{Doors}}">
-                            </td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td><b>Wheels </b> </td>
-                            <td>
-                                <input type="text" #Wheels (ngModel)="Wheels" value="{{Wheels}}">
 
-                            </td>
-                            <td><b>Car Type </b> </td>
-                            <td>
-                                <input type="text" #CarType (ngModel)="CarType" value="{{CarType}}">
-                            </td>
-                            <td width="20"> </td>
-                            <td align="right" colspan="2">
-                                <button (click)=AddCars(make.value,Model.value,Engine.value,Doors.value,wheels.value,cartype.value) style="background-color:#428d28;color:#FFFFFF;font-size:large;width:220px;
-                              border-color:#a2aabe;border-style:dashed;border-width:2px;">
-                                    Add
-                                </button>
-                            </td>
-                        </tr>
-                    </table>
+            </tr>
+
+            <tr>
+                <td><b>Engine </b> </td>
+                <td>
+                    <input type="text" #Engine (ngModel)="Engine" value="{{Engine}}">
                 </td>
             </tr>
+            <tr>
+                <td><b>Doors </b> </td>
+                <td>
+                    <input type="text" #Doors (ngModel)="Doors" value="{{Doors}}">
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td><b>Wheels </b> </td>
+                <td>
+                    <input type="text" #Wheels (ngModel)="Wheels" value="{{Wheels}}">
+
+                </td>
+            </tr>
+            <tr>
+                <td><b>Car Type </b> </td>
+                <td>
+                    <input type="text" #CarType (ngModel)="CarType" value="{{CarType}}">
+                </td>
+            </tr>
+            <tr>
+                <td align="right" colspan="2">
+                    <button (click)=AddCars(make.value,Model.value,Engine.value,Doors.value,wheels.value,cartype.value) style="background-color:#428d28;color:#FFFFFF;font-size:large;width:220px;
+                              border-color:#a2aabe;border-style:dashed;border-width:2px;">
+                        Add
+                    </button>
+                </td>
+
+            </tr>
         </table>
+
     </form>
     <a href="../../index.html"><b>Back</b></a>
 

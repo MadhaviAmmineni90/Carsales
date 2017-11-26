@@ -18,8 +18,46 @@
     <script>
         System.import('main.js').catch(function (err) { console.error(err); });
     </script>
+    <script src="../bootstrap/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 </head>
-<body>
-    <my-app>Loading AppComponent content here ...</my-app>
+<body style="background-color:gray;">
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><span class="glyphicon glyphicon-home"></span> Car Sales</a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="app/Vehicles/VehicleCreate.component.html">Add Car</a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="app/Vehicles/CreateBike.component.html">Add Bike</a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="app/VehicleTpes/VehicleTypes.component.html">Add Vehicle Type</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div>
+
+        <my-app>Loading AppComponent content here ...</my-app>
+        <h2><b>Vehicles List</b></h2>
+    </div>
+
 </body>
 </html>

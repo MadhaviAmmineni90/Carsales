@@ -21,10 +21,11 @@
                         <tr>
                             <td><b>Make </b> </td>
                             <td>
-                                <input type="text" #MakeId (ngModel)="MakeId" value="{{MakeID}}" style="background-color:tan" readonly>
+                                <input type="text" #MakeId (ngModel)="MakeId" value="{{MakeID}}" >
                             </td>
-                            <td width="20"> </td>
-                            <td><b> </b> </td>
+                        </tr>
+                        <tr>
+                            <td><b>Model </b> </td>
                             <td>
                                 <input type="text" #Model (ngModel)="Model" value="{{Model}}">
                             </td>
@@ -43,21 +44,24 @@
                                 <input type="text" #Wheels (ngModel)="Wheels" value="{{Wheels}}">
 
                             </td>
+                        </tr>
+                        <tr>
                             <td><b>Car Type </b> </td>
                             <td>
                                 <input type="text" #CarType (ngModel)="CarType" value="{{Bike}}" />
                             </td>
-                            <td width="20"> </td>
-                            <td align="right" colspan="2">
-                                <button (click)=AddBikes(make.value,Model.value,Engine.value,wheels.value,BikeType.value) style="background-color:#428d28;color:#FFFFFF;font-size:large;width:220px;
-                              border-color:#a2aabe;border-style:dashed;border-width:2px;">
-                                    Add
-                                </button>
-                            </td>
+
                         </tr>
-                    </table>
-                </td>
+                        <td align="right" colspan="2">
+                            <button (click)=AddBikes(make.value,Model.value,Engine.value,wheels.value,BikeType.value) style="background-color:#428d28;color:#FFFFFF;font-size:large;width:220px;
+                              border-color:#a2aabe;border-style:dashed;border-width:2px;">
+                                Add
+                            </button>
+                        </td>
             </tr>
+        </table>
+        </td>
+        </tr>
         </table>
     </form>
     <a href="../../index.html"><b>Back</b></a>

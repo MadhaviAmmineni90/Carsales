@@ -21,14 +21,17 @@
                         <tr>
                             <td><b>VehicleType </b> </td>
                             <td>
-                                <input type="text" #VehicleType (ngModel)="MakeId" value="{{VehicleType}}" style="background-color:tan" readonly>
+                                <input type="text" #VehicleType (ngModel)="MakeId" value="{{VehicleType}}" readonly>
                             </td>
 
                         </tr>
                     </table>
+
                 </td>
-                <td align="right" colspan="2">
-                    <button (click)=AddVehicleTypes(VehicleType.value) 
+            </tr>
+            <tr>
+                <td colspan="2" width="50px;">
+                    <button (click)=AddVehicleTypes(VehicleType.value)
                             style="background-color:#428d28;color:#FFFFFF;font-size:large;width:220px;
                               border-color:#a2aabe;border-style:dashed;border-width:2px;">
                         Add

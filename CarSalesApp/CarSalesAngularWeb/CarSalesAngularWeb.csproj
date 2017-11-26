@@ -81,6 +81,7 @@
     <Content Include="src\app\app.component.js" />
     <Content Include="src\app\app.component.spec.js" />
     <Content Include="src\app\app.module.js" />
+    <Content Include="src\app\Images\carsales_feature.jpg" />
     <Content Include="src\app\Vehicles\Bike.Component.html" />
     <Content Include="src\app\Vehicles\CreateBike.component.html" />
     <Content Include="src\app\Vehicles\VehicleCreate.component.html" />
