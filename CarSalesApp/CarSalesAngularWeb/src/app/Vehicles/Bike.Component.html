@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div class="row">
+        <div class="table-responsive">
+            <table class="table ">
+                <thead class="thead-default">
+                    <tr>
+                        <th>Make</th>
+                        <th>Model</th>
+                        <th>Engine</th>
+                        <th>wheels</th>
+                        <th>BikeType</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <ng-container *ngFor="let bike of Bikes">
+                        <tr>
+                            <td>{{bike.Make}}</td>
+                            <td>{{bike.Model}}</td>
+                            <td>{{bike.Engine}}</td>
+                            <td>{{bike.wheels}}</td>
+                            <td>{{bike.BikeType}}</td>
+                            <td style="width: 70px;">
+                                <i class="glyphicon glyphicon-edit pointer"
+                                   (click)="edit(cust.id)" title="Edit"></i>
+                            </td>
+                        </tr>
+                    </ng-container>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
