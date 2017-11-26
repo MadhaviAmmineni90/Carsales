@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form [formGroup]="AddVehicleTypesForm" (ngSubmit)="save()" novalidate>
+
+        <table style="background-color:#FFFFFF; border: dashed 3px #6D7B8D; padding :5px;width :99%;table-layout:fixed;" cellpadding="2" cellspacing="2">
+            <tr style="height: 30px; background-color:#336699 ; color:#FFFFFF ;border: solid 1px #659EC7;">
+                <td width="40"></td>
+                <td>
+                    <h2>Adde Vehicle Types</h2>
+                </td>
+            </tr>
+            <tr>
+                <td width="100"></td>
+                <td>
+                    <table style="color:#9F000F;font-size:large; padding :5px;" cellpadding="12" cellspacing="16">
+                        <tr>
+                            <td><b>VehicleType </b> </td>
+                            <td>
+                                <input type="text" #VehicleType (ngModel)="MakeId" value="{{VehicleType}}" style="background-color:tan" readonly>
+                            </td>
+
+                        </tr>
+                    </table>
+                </td>
+                <td align="right" colspan="2">
+                    <button (click)=AddVehicleTypes(VehicleType.value) 
+                            style="background-color:#428d28;color:#FFFFFF;font-size:large;width:220px;
+                              border-color:#a2aabe;border-style:dashed;border-width:2px;">
+                        Add
+                    </button>
+                </td>
+
+            </tr>
+        </table>
+    </form>
+    <a href="../../index.html">Back</a>
+
+</body>
+</html>
