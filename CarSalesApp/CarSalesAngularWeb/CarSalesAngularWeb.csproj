@@ -81,10 +81,13 @@
     <Content Include="src\app\app.component.js" />
     <Content Include="src\app\app.component.spec.js" />
     <Content Include="src\app\app.module.js" />
+    <Content Include="src\app\Vehicles\Bike.Component.html" />
+    <Content Include="src\app\Vehicles\CreateBike.component.html" />
     <Content Include="src\app\Vehicles\VehicleCreate.component.html" />
     <Content Include="src\app\Vehicles\Vehicles.component.js" />
     <Content Include="src\app\Vehicles\Vehicles.js" />
     <Content Include="src\app\Vehicles\Vehicles.service.js" />
+    <Content Include="src\app\VehicleTpes\VehicleTypes.component.html" />
     <Content Include="src\main.js" />
     <Content Include="src\tsconfig.json" />
     <Content Include="tslint.json" />
@@ -125,10 +128,14 @@
     <TypeScriptCompile Include="src\app\app.component.spec.ts" />
     <TypeScriptCompile Include="src\app\app.component.ts" />
     <TypeScriptCompile Include="src\app\app.module.ts" />
+    <TypeScriptCompile Include="src\app\Vehicles\CreateBike.component.ts" />
     <TypeScriptCompile Include="src\app\Vehicles\VehicleCreate.component.ts" />
     <TypeScriptCompile Include="src\app\Vehicles\Vehicles.component.ts" />
     <TypeScriptCompile Include="src\app\Vehicles\Vehicles.service.ts" />
     <TypeScriptCompile Include="src\app\Vehicles\Vehicles.ts" />
+    <TypeScriptCompile Include="src\app\VehicleTpes\VehicleType.component.ts" />
+    <TypeScriptCompile Include="src\app\VehicleTpes\VehicleType.service.ts" />
+    <TypeScriptCompile Include="src\app\VehicleTpes\VehicleType.ts" />
     <TypeScriptCompile Include="src\main.ts" />
   </ItemGroup>
   <ItemGroup>
