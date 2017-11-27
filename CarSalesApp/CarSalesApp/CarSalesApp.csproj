@@ -171,29 +171,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="ManageVehiclesModel.Context.cs">
+    <Compile Include="Models\ManageVehiclesModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ManageVehiclesModel.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="ManageVehiclesModel.cs">
+    <Compile Include="Models\ManageVehiclesModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ManageVehiclesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="ManageVehiclesModel.Designer.cs">
+    <Compile Include="Models\ManageVehiclesModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ManageVehiclesModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="tblBike.cs">
+    <Compile Include="Models\tblBike.cs">
       <DependentUpon>ManageVehiclesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblCar.cs">
+    <Compile Include="Models\tblCar.cs">
       <DependentUpon>ManageVehiclesModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="tblVehicleType.cs">
+    <Compile Include="Models\tblVehicleType.cs">
       <DependentUpon>ManageVehiclesModel.tt</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -204,12 +204,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="ManageVehiclesModel.Context.tt">
+    <Content Include="Models\ManageVehiclesModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>ManageVehiclesModel.Context.cs</LastGenOutput>
       <DependentUpon>ManageVehiclesModel.edmx</DependentUpon>
     </Content>
-    <Content Include="ManageVehiclesModel.tt">
+    <Content Include="Models\ManageVehiclesModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ManageVehiclesModel.edmx</DependentUpon>
       <LastGenOutput>ManageVehiclesModel.cs</LastGenOutput>
@@ -219,11 +219,11 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <EntityDeploy Include="ManageVehiclesModel.edmx">
+    <EntityDeploy Include="Models\ManageVehiclesModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ManageVehiclesModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="ManageVehiclesModel.edmx.diagram">
+    <Content Include="Models\ManageVehiclesModel.edmx.diagram">
       <DependentUpon>ManageVehiclesModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -254,7 +254,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

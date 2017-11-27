@@ -14,7 +14,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
     templateUrl: 'app/Vehicles/Bike.component.html',
     providers: [VehicleService]
 })
-
+///get list of vehicles
 export class carscomponent implements OnInit {
     cars: ICars[];
     bikes: IBikes[];

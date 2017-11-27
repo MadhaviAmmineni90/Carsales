@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSalesApp", "CarSalesApp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarSalesAngularWeb", "CarSalesAngularWeb\CarSalesAngularWeb.csproj", "{11848E66-D960-4494-A6EC-F8545FD0BB02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApiUnitTestProject", "ApiUnitTestProject\ApiUnitTestProject.csproj", "{A60C3DBE-653B-4CC7-B3D9-82863F448177}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{11848E66-D960-4494-A6EC-F8545FD0BB02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11848E66-D960-4494-A6EC-F8545FD0BB02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{11848E66-D960-4494-A6EC-F8545FD0BB02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A60C3DBE-653B-4CC7-B3D9-82863F448177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A60C3DBE-653B-4CC7-B3D9-82863F448177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A60C3DBE-653B-4CC7-B3D9-82863F448177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A60C3DBE-653B-4CC7-B3D9-82863F448177}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

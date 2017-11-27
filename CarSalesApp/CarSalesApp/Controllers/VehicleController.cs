@@ -1,8 +1,11 @@
-﻿using System;
+﻿using CarSalesApp.Models;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Text;
 using System.Web.Http;
 
 namespace CarSalesApp.Controllers
@@ -10,6 +13,17 @@ namespace CarSalesApp.Controllers
     public class VehicleController : ApiController
     {
         private CarSalesDBEntities objcarDbentities = new CarSalesDBEntities();
+        IEnumerable<tblCar> objCarobj = new List<tblCar>();
+
+        public VehicleController()
+        {
+
+        }
+
+        public VehicleController(IEnumerable<tblCar> objCarcon)
+        {
+            this.objCarobj = objCarcon;
+        }
 
         #region Cars
 
@@ -18,7 +32,7 @@ namespace CarSalesApp.Controllers
         /// </summary>
         /// <returns>List</returns>
         [HttpGet]
-        public IEnumerable<tblCar> GetCars()
+        public List<tblCar> GetCars()
         {
             objcarDbentities.Configuration.ProxyCreationEnabled = false;
             return objcarDbentities.tblCars.ToList();
@@ -58,7 +72,7 @@ namespace CarSalesApp.Controllers
             {
                 return NotFound();
             }
-            return Ok();
+            return Content(HttpStatusCode.Accepted, objCar);
         }
 
         /// <summary>
@@ -67,16 +81,10 @@ namespace CarSalesApp.Controllers
         /// <param name="objCars"></param>
         /// <returns>IHttpActionResult</returns>
         ///[HttpPost]
-        public void PostCars([FromBody]tblCar objCars)
+        public HttpResponseMessage PostCars([FromBody]tblCar objCars)
         {
-            //if (!ModelState.IsValid)
-            //{
-            //    return BadRequest(ModelState);
-            //}
             objcarDbentities.tblCars.Add(objCars);
-            objcarDbentities.SaveChanges();
-
-            // return CreatedAtRoute("DefaultApi", new { id = objCars.CarId }, objCars);
+            return ToJson(objcarDbentities.SaveChanges());
         }
 
         #endregion
@@ -130,6 +138,27 @@ namespace CarSalesApp.Controllers
             }
             return Ok();
         }
+
+        protected HttpResponseMessage ToJson(dynamic obj)
+        {
+            var response = Request.CreateResponse(HttpStatusCode.OK);
+            response.Content = new StringContent(JsonConvert.SerializeObject(obj), Encoding.UTF8, "application/json");
+            return response;
+        }
+
+        /// <summary>
+        /// Method to add new Bikes
+        /// </summary>
+        /// <param name="objBikes"></param>
+        /// <returns>IHttpActionResult</returns>
+        ///[HttpPost]
+        public HttpResponseMessage PostBikes([FromBody]tblBike objBikes)
+        {
+            objcarDbentities.tblBikes.Add(objBikes);
+            objcarDbentities.SaveChanges();
+            return ToJson(objcarDbentities.SaveChanges());
+        }
+
         #endregion
     }
 }
